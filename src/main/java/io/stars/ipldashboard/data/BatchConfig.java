@@ -23,7 +23,7 @@ import io.stars.ipldashboard.model.Match;
 @EnableBatchProcessing
 public class BatchConfig {
 
-    private final String MATCH_DATA_FILE_NAME = "match-data_file2.csv";
+    private final String MATCH_DATA_FILE_NAME = "match-data.csv";
 
     private final String FIELD_NAMES[] = new String[] { "id", "city", "date", "player_of_match", "venue",
             "neutral_venue", "team1", "team2", "toss_winner", "toss_decision", "winner", "result", "result_margin",
