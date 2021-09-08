@@ -1,18 +1,16 @@
 package io.stars.ipldashboard.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.beans.factory.annotation.Autowired; 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import io.stars.ipldashboard.repository.TeamRepository; 
-import io.stars.ipldashboard.repository.MatchRepository; 
-import java.util.List;
-import io.stars.ipldashboard.model.Team; 
-import io.stars.ipldashboard.model.Match;
-
+import io.stars.ipldashboard.repository.MatchRepository;  
+import io.stars.ipldashboard.model.Team;  
 
 @RestController
+@CrossOrigin
 public class TeamController {
     
     @Autowired
@@ -28,10 +26,11 @@ public class TeamController {
 
     @GetMapping("/team/{teamName}")
     public Team getTeam(@PathVariable String teamName) { 
+        System.out.println(System.currentTimeMillis() + " TeamController getTeam() Rest request called");
         Team team = this.teamRepository.findByTeamName(teamName); 
         int noOfMatchesTobeFetched = 4;
         team.setMatches(matchRepository.findLatestMatchesByTeam(teamName, noOfMatchesTobeFetched));
-
+        
         return team;
     } 
 
