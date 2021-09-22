@@ -26,7 +26,6 @@ public class TeamController {
 
     @GetMapping("/team/{teamName}")
     public Team getTeam(@PathVariable String teamName) { 
-        System.out.println(System.currentTimeMillis() + " TeamController getTeam() Rest request called");
         Team team = this.teamRepository.findByTeamName(teamName); 
         int noOfMatchesTobeFetched = 4;
         team.setMatches(matchRepository.findLatestMatchesByTeam(teamName, noOfMatchesTobeFetched));
