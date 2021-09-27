@@ -1,7 +1,13 @@
 .MatchPage { 
     display: grid;
+    grid-template-rows: 40px 1fr;
     grid-template-columns: 1fr 5fr;  
     grid-column-gap: 20px; 
+
+    .home-link{ 
+        align-self: center; 
+        grid-column: span 2;
+    } 
 
     .year-selector {
         justify-self: end;
@@ -10,5 +16,10 @@
 
     .page-heading{
         margin: 20px auto;
+    }
+
+    .no-matches{ 
+        color: wheat;
+        padding: 30px; 
     }
 }

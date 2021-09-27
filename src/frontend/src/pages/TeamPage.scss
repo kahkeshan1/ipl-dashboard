@@ -1,19 +1,25 @@
 .TeamPage{
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr  1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
-    grid-row-gap: 10px; 
-
-    .team-name-section{
-        grid-column: span 3;
-        justify-self: start; //horizontal alignment
-        align-self: end;  //vertical alignment
-    }
+    grid-row-gap: 10px;  
+    
+    .home-link{ 
+        align-self: start; 
+     } 
+    
+    .team-name-section{  
+        grid-column: span 3; //refers the main grid
+        display: grid;       //displays this section as grid
+        grid-template-rows: 1fr 1fr;
+    } 
 
     .team-name{
         font-size: 4rem;
         margin-bottom: 20px;
+        justify-self: start; //horizontal alignment
+        align-self: end;  //vertical alignment
     }
 
     .win-loss-section{
